@@ -2,6 +2,7 @@ package kaede.valineenergycore.common.content.network;
 
 import kaede.valineenergycore.api.energy.BigEnergy;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.Level;
 
 import javax.annotation.Nullable;
 import java.util.Set;
@@ -24,6 +25,8 @@ public abstract class VETransmitter implements IVETransmitter {
     public BlockPos getPosition() {
         return position;
     }
+
+    public abstract Level getWorld();
 
     @Override
     @Nullable

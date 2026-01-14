@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Specification-Title: valineenergycore
+Specification-Vendor: kaede
+Specification-Version: 1
+Implementation-Title: valineenergycore
+Implementation-Version: 1.0.0
+Implementation-Vendor: kaede
+Implementation-Timestamp: 2026-01-15T05:29:27+0900
+

@@ -226,7 +226,7 @@ public class BlockVECable extends Block implements EntityBlock {
                                                                   BlockEntityType<T> type) {
         return level.isClientSide ? null : (lvl, pos, st, be) -> {
             if (be instanceof BlockEntityVECable cable) {
-                cable.tick();
+                BlockEntityVECable.tick(level, pos, state, cable);
             }
         };
     }

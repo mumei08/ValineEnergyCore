@@ -16,9 +16,9 @@ import java.util.Set;
 
 public class VECableTransmitter extends VETransmitter {
 
-    private final BlockEntityVECable blockEntity;
+    private final kaede.valineenergycore.common.block.BlockEntityVECable blockEntity;
 
-    public VECableTransmitter(BlockPos position, VECableTier tier, BlockEntityVECable blockEntity) {
+    public VECableTransmitter(BlockPos position, VECableTier tier, kaede.valineenergycore.common.block.BlockEntityVECable blockEntity) {
         super(position, tier);
         this.blockEntity = blockEntity;
     }
@@ -36,7 +36,7 @@ public class VECableTransmitter extends VETransmitter {
             BlockPos adjacentPos = position.relative(direction);
             BlockEntity be = level.getBlockEntity(adjacentPos);
 
-            if (be instanceof BlockEntityVECable cable) {
+            if (be instanceof kaede.valineenergycore.common.block.BlockEntityVECable cable) {
                 adjacent.add(cable.getTransmitter());
             }
         }
