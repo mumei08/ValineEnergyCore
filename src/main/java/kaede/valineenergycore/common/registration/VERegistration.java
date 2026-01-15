@@ -2,8 +2,6 @@ package kaede.valineenergycore.common.registration;
 
 import kaede.valineenergycore.ValineEnergyCore;
 import kaede.valineenergycore.common.block.*;
-import kaede.valineenergycore.common.content.network.VECableTier;
-import kaede.valineenergycore.common.item.VECableBlockItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -17,7 +15,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 /**
- * ValineEnergy Core の全登録を管理するクラス
+ * ValineEnergy Core の全登録を管理するクラス（無限容量システム対応版）
  */
 public class VERegistration {
 
@@ -33,93 +31,61 @@ public class VERegistration {
 
     // ========== ブロック登録 ==========
 
-    // VE Cable - Basic
-    public static final RegistryObject<Block> VE_CABLE_BASIC = BLOCKS.register(
-            "ve_cable_basic",
-            () -> new BlockVECableBasic(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.METAL)
-                    .strength(1.0f, 3.0f)
-                    .sound(SoundType.METAL)
-                    .noOcclusion()
-            )
-    );
-
-    // VE Cable - Advanced
-    public static final RegistryObject<Block> VE_CABLE_ADVANCED = BLOCKS.register(
-            "ve_cable_advanced",
-            () -> new BlockVECableAdvanced(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.METAL)
-                    .strength(1.5f, 4.0f)
-                    .sound(SoundType.METAL)
-                    .noOcclusion()
-            )
-    );
-
-    // VE Cable - Elite
-    public static final RegistryObject<Block> VE_CABLE_ELITE = BLOCKS.register(
-            "ve_cable_elite",
-            () -> new BlockVECableElite(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.METAL)
-                    .strength(2.0f, 5.0f)
-                    .sound(SoundType.METAL)
-                    .noOcclusion()
-            )
-    );
-
-    // VE Cable - Ultimate
-    public static final RegistryObject<Block> VE_CABLE_ULTIMATE = BLOCKS.register(
-            "ve_cable_ultimate",
-            () -> new BlockVECableUltimate(BlockBehaviour.Properties.of()
+    // VE Cable - Infinite (無限容量ケーブル)
+    public static final RegistryObject<Block> VE_CABLE_INFINITE = BLOCKS.register(
+            "ve_cable_infinite",
+            () -> new BlockVECableInfinite(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.METAL)
                     .strength(3.0f, 6.0f)
                     .sound(SoundType.METAL)
                     .noOcclusion()
+                    .lightLevel(state -> 3) // ほのかに光る
+            )
+    );
+
+    // VE Energy Cube (エネルギーキューブ)
+    public static final RegistryObject<Block> VE_ENERGY_CUBE = BLOCKS.register(
+            "ve_energy_cube",
+            () -> new BlockVEEnergyCube(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.DIAMOND)
+                    .strength(5.0f, 10.0f)
+                    .sound(SoundType.METAL)
+                    .requiresCorrectToolForDrops()
+                    .lightLevel(state -> 5) // より明るく光る
             )
     );
 
     // ========== アイテム登録 ==========
 
-    // VECableBlockItemを使用するように変更
-    public static final RegistryObject<Item> VE_CABLE_BASIC_ITEM = ITEMS.register(
-            "ve_cable_basic",
-            () -> new VECableBlockItem(VE_CABLE_BASIC.get(), new Item.Properties(), VECableTier.BASIC)
+    // VE Cable Infinite Item
+    public static final RegistryObject<Item> VE_CABLE_INFINITE_ITEM = ITEMS.register(
+            "ve_cable_infinite",
+            () -> new BlockItem(VE_CABLE_INFINITE.get(), new Item.Properties())
     );
 
-    public static final RegistryObject<Item> VE_CABLE_ADVANCED_ITEM = ITEMS.register(
-            "ve_cable_advanced",
-            () -> new VECableBlockItem(VE_CABLE_ADVANCED.get(), new Item.Properties(), VECableTier.ADVANCED)
-    );
-
-    public static final RegistryObject<Item> VE_CABLE_ELITE_ITEM = ITEMS.register(
-            "ve_cable_elite",
-            () -> new VECableBlockItem(VE_CABLE_ELITE.get(), new Item.Properties(), VECableTier.ELITE)
-    );
-
-    public static final RegistryObject<Item> VE_CABLE_ULTIMATE_ITEM = ITEMS.register(
-            "ve_cable_ultimate",
-            () -> new VECableBlockItem(VE_CABLE_ULTIMATE.get(), new Item.Properties(), VECableTier.ULTIMATE)
+    // VE Energy Cube Item
+    public static final RegistryObject<Item> VE_ENERGY_CUBE_ITEM = ITEMS.register(
+            "ve_energy_cube",
+            () -> new BlockItem(VE_ENERGY_CUBE.get(), new Item.Properties())
     );
 
     // ========== BlockEntity登録 ==========
 
-    public static final RegistryObject<BlockEntityType<BlockEntityVECable>> VE_CABLE_BE =
-            BLOCK_ENTITIES.register("ve_cable", () ->
+    // VE Cable Infinite BlockEntity
+    public static final RegistryObject<BlockEntityType<BlockEntityVECableInfinite>> VE_CABLE_INFINITE_BE =
+            BLOCK_ENTITIES.register("ve_cable_infinite", () ->
                     BlockEntityType.Builder.of(
-                            (pos, state) -> {
-                                // ブロックからTierを取得
-                                Block block = state.getBlock();
-                                VECableTier tier = VECableTier.BASIC;
+                            BlockEntityVECableInfinite::new,
+                            VE_CABLE_INFINITE.get()
+                    ).build(null)
+            );
 
-                                if (block instanceof BlockVECable cable) {
-                                    tier = cable.getTier();
-                                }
-
-                                return new BlockEntityVECable(pos, state, tier);
-                            },
-                            VE_CABLE_BASIC.get(),
-                            VE_CABLE_ADVANCED.get(),
-                            VE_CABLE_ELITE.get(),
-                            VE_CABLE_ULTIMATE.get()
+    // VE Energy Cube BlockEntity
+    public static final RegistryObject<BlockEntityType<BlockEntityVEEnergyCube>> VE_ENERGY_CUBE_BE =
+            BLOCK_ENTITIES.register("ve_energy_cube", () ->
+                    BlockEntityType.Builder.of(
+                            BlockEntityVEEnergyCube::new,
+                            VE_ENERGY_CUBE.get()
                     ).build(null)
             );
 

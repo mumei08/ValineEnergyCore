@@ -110,25 +110,25 @@ public class VEConfig {
                     .comment(
                             "VE to Forge Energy conversion rate (numerator)",
                             "Formula: FE = VE * (numerator / denominator)",
-                            "Default: 1 VE = 0.2 FE (1/5)"
+                            "Default: 1 VE = Integer.MAX_VALUE FE (1/5)"
                     )
-                    .defineInRange("veToForgeEnergyNumerator", 1L, 1L, Long.MAX_VALUE);
+                    .defineInRange("veToForgeEnergyNumerator", Integer.MAX_VALUE, 1L, Long.MAX_VALUE);
 
             veToForgeEnergyDenominator = builder
                     .comment("VE to Forge Energy conversion rate (denominator)")
-                    .defineInRange("veToForgeEnergyDenominator", 5L, 1L, Long.MAX_VALUE);
+                    .defineInRange("veToForgeEnergyDenominator", 1L, 1L, Long.MAX_VALUE);
 
             forgeEnergyToVENumerator = builder
                     .comment(
                             "Forge Energy to VE conversion rate (numerator)",
                             "Formula: VE = FE * (numerator / denominator)",
-                            "Default: 1 FE = 5 VE"
+                            "Default: Integer.MAX_VALUE FE = 1 VE"
                     )
-                    .defineInRange("forgeEnergyToVENumerator", 5L, 1L, Long.MAX_VALUE);
+                    .defineInRange("forgeEnergyToVENumerator", 1L, 1L, Long.MAX_VALUE);
 
             forgeEnergyToVEDenominator = builder
                     .comment("Forge Energy to VE conversion rate (denominator)")
-                    .defineInRange("forgeEnergyToVEDenominator", 1L, 1L, Long.MAX_VALUE);
+                    .defineInRange("forgeEnergyToVEDenominator", Integer.MAX_VALUE, 1L, Long.MAX_VALUE);
 
             builder.pop();
 

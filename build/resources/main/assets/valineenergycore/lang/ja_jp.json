@@ -1,112 +1,62 @@
 {
-  "_comment": "ValineEnergy Core - 日本語言語ファイル",
+  "_comment": "ValineEnergy Core - 無限容量システム対応日本語言語ファイル",
 
   "itemGroup.valineenergycore": "ValineEnergy Core",
 
-  "block.valineenergycore.ve_cable_basic": "基本VEケーブル",
-  "block.valineenergycore.ve_cable_advanced": "発展VEケーブル",
-  "block.valineenergycore.ve_cable_elite": "上級VEケーブル",
-  "block.valineenergycore.ve_cable_ultimate": "究極VEケーブル",
+  "block.valineenergycore.ve_cable_infinite": "VE無限ケーブル",
+  "block.valineenergycore.ve_energy_cube": "VEエネルギーキューブ",
 
-  "tooltip.valineenergycore.ve_cable": "ValineEnergy (VE) を転送します",
-  "tooltip.valineenergycore.ve_cable.capacity": "容量: %s VE",
-  "tooltip.valineenergycore.ve_cable.transfer_rate": "転送レート: %s VE/tick",
-  "tooltip.valineenergycore.ve_cable.tier": "ランク: %s",
+  "tooltip.valineenergycore.ve_cable_infinite": "無制限のValineEnergyを転送します",
+  "tooltip.valineenergycore.ve_cable_infinite.capacity": "容量: メモリベース (最大: %s VE)",
+  "tooltip.valineenergycore.ve_cable_infinite.transfer_rate": "転送レート: 無制限",
+  "tooltip.valineenergycore.ve_cable_infinite.info": "容量は割り当てRAMに応じて拡大します",
+  "tooltip.valineenergycore.ve_cable_infinite.formula": "1 MB RAM = 10^50 VE",
+
+  "tooltip.valineenergycore.ve_energy_cube": "無制限のValineEnergyを保存します",
+  "tooltip.valineenergycore.ve_energy_cube.capacity": "容量: メモリベース (最大: %s VE)",
+  "tooltip.valineenergycore.ve_energy_cube.stored": "蓄積量: %s VE",
+  "tooltip.valineenergycore.ve_energy_cube.percentage": "充填率: %s%%",
+  "tooltip.valineenergycore.ve_energy_cube.info": "右クリックで蓄積量を表示",
+
   "tooltip.valineenergycore.shift_for_details": "§eSHIFT§7で詳細を表示",
 
-  "tooltip.valineenergycore.energy.stored": "蓄積量: %s VE",
-  "tooltip.valineenergycore.energy.capacity": "容量: %s VE",
-  "tooltip.valineenergycore.energy.percentage": "(%s%%)",
+  "info.valineenergycore.memory.current": "現在のメモリ: %s MB",
+  "info.valineenergycore.memory.max_capacity": "最大VE容量: %s VE",
+  "info.valineenergycore.memory.usage": "メモリ使用率: %s%%",
 
-  "info.valineenergycore.tier.basic": "基本",
-  "info.valineenergycore.tier.advanced": "発展",
-  "info.valineenergycore.tier.elite": "上級",
-  "info.valineenergycore.tier.ultimate": "究極",
-
-  "info.valineenergycore.network.transmitters": "送信機: %s",
-  "info.valineenergycore.network.acceptors": "受信機: %s",
-  "info.valineenergycore.network.buffer": "ネットワークバッファ: %s VE",
-  "info.valineenergycore.network.capacity": "ネットワーク容量: %s VE",
-  "info.valineenergycore.network.id": "ネットワークID: %s",
-
-  "message.valineenergycore.network.created": "VEネットワークが作成されました",
-  "message.valineenergycore.network.merged": "VEネットワークが統合されました",
-  "message.valineenergycore.network.split": "VEネットワークが分割されました",
-
-  "message.valineenergycore.memory.warning": "§c警告: VEメモリ使用率が%s%%です。より多くのRAMを割り当てることを検討してください。",
-  "message.valineenergycore.memory.limit_reached": "§cVE容量制限に到達しました！最大値: %s VE",
-
-  "command.valineenergycore.network.info": "VEネットワーク情報:",
-  "command.valineenergycore.network.total": "総ネットワーク数: %s",
-  "command.valineenergycore.network.total_transmitters": "総送信機数: %s",
-  "command.valineenergycore.network.total_acceptors": "総受信機数: %s",
-  "command.valineenergycore.network.total_buffer": "総バッファ: %s VE",
-  "command.valineenergycore.network.total_capacity": "総容量: %s VE",
-
-  "command.valineenergycore.memory.info": "VEメモリ情報:",
-  "command.valineenergycore.memory.allocated": "割り当てメモリ: %s MB",
-  "command.valineenergycore.memory.used": "使用メモリ: %s MB (%s%%)",
-  "command.valineenergycore.memory.max_capacity": "最大VE容量: %s VE",
-  "command.valineenergycore.memory.limits_enabled": "メモリベース制限: %s",
-
-  "config.valineenergycore.title": "ValineEnergy Core 設定",
-
-  "config.valineenergycore.conversion": "エネルギー変換",
-  "config.valineenergycore.conversion.tooltip": "VEとForge Energyの変換レートを設定します",
-
-  "config.valineenergycore.memory": "メモリベースシステム",
-  "config.valineenergycore.memory.tooltip": "割り当てメモリに応じたVE容量のスケーリングを設定します",
-
-  "config.valineenergycore.cables": "ケーブルランク",
-  "config.valineenergycore.cables.tooltip": "各ケーブルランクの容量と転送レートを設定します",
-
-  "config.valineenergycore.network": "ネットワーク設定",
-  "config.valineenergycore.network.tooltip": "ネットワークの動作と制限を設定します",
-
-  "config.valineenergycore.performance": "パフォーマンス",
-  "config.valineenergycore.performance.tooltip": "パフォーマンス最適化を設定します",
-
-  "config.valineenergycore.debug": "デバッグ設定",
-  "config.valineenergycore.debug.tooltip": "デバッグと可視化オプションを設定します",
-
-  "jei.valineenergycore.category.ve_conversion": "VE変換",
-  "jei.valineenergycore.info.ve_to_fe": "1 VE = %s FE",
-  "jei.valineenergycore.info.fe_to_ve": "1 FE = %s VE",
-
-  "death.attack.valineenergycore.overload": "%sは過剰なValineEnergyに圧倒されました",
-
-  "gui.valineenergycore.energy": "エネルギー",
-  "gui.valineenergycore.stored": "蓄積",
-  "gui.valineenergycore.capacity": "容量",
-  "gui.valineenergycore.transfer": "転送",
-  "gui.valineenergycore.input": "入力",
-  "gui.valineenergycore.output": "出力",
+  "message.valineenergycore.energy_cube.info": "VEエネルギーキューブ: %s / %s (%s%%)",
+  "message.valineenergycore.memory.info": "メモリ: %s MB | 最大VE: %s",
 
   "advancement.valineenergycore.root.title": "ValineEnergy",
   "advancement.valineenergycore.root.description": "メモリベースのエネルギーシステム",
 
-  "advancement.valineenergycore.basic_cable.title": "エネルギー高速道路",
-  "advancement.valineenergycore.basic_cable.description": "基本VEケーブルを作成する",
+  "advancement.valineenergycore.infinite_cable.title": "無限の送電線",
+  "advancement.valineenergycore.infinite_cable.description": "VE無限ケーブルを作成する",
 
-  "advancement.valineenergycore.advanced_cable.title": "パワーサージ",
-  "advancement.valineenergycore.advanced_cable.description": "発展VEケーブルにアップグレードする",
-
-  "advancement.valineenergycore.elite_cable.title": "エリートエネルギー",
-  "advancement.valineenergycore.elite_cable.description": "上級VEケーブルを作成する",
-
-  "advancement.valineenergycore.ultimate_cable.title": "究極のパワー",
-  "advancement.valineenergycore.ultimate_cable.description": "究極を達成する：究極VEケーブル",
-
-  "advancement.valineenergycore.huge_network.title": "メガネットワーク",
-  "advancement.valineenergycore.huge_network.description": "100以上の送信機を持つネットワークを作成する",
+  "advancement.valineenergycore.energy_cube.title": "エネルギー貯蔵",
+  "advancement.valineenergycore.energy_cube.description": "VEエネルギーキューブを作成する",
 
   "advancement.valineenergycore.max_capacity.title": "無限のパワー",
-  "advancement.valineenergycore.max_capacity.description": "RAMに基づく最大VE容量に到達する",
+  "advancement.valineenergycore.max_capacity.description": "エネルギーキューブを最大容量まで充填する",
 
-  "key.categories.valineenergycore": "ValineEnergy Core",
-  "key.valineenergycore.toggle_network_overlay": "ネットワークオーバーレイの切り替え",
+  "advancement.valineenergycore.huge_storage.title": "過剰な貯蔵",
+  "advancement.valineenergycore.huge_storage.description": "10^50 VE以上を貯蔵する",
+
+  "config.valineenergycore.title": "ValineEnergy Core 設定",
+
+  "jei.valineenergycore.info.infinite_cable": "容量と転送レートは割り当てメモリに応じて拡大",
+  "jei.valineenergycore.info.memory_formula": "1 MB RAM = 10^50 VE 容量",
+  "jei.valineenergycore.info.energy_cube": "メモリ制限までエネルギーを保存",
+
+  "gui.valineenergycore.energy": "エネルギー",
+  "gui.valineenergycore.stored": "蓄積",
+  "gui.valineenergycore.capacity": "容量",
+  "gui.valineenergycore.unlimited": "無制限",
+
+  "death.attack.valineenergycore.overload": "%sは過剰なValineEnergyに圧倒されました",
 
   "subtitles.valineenergycore.cable_connect": "VEケーブルが接続",
   "subtitles.valineenergycore.cable_disconnect": "VEケーブルが切断",
-  "subtitles.valineenergycore.energy_transfer": "エネルギーが流れる"
+  "subtitles.valineenergycore.energy_transfer": "エネルギーが流れる",
+  "subtitles.valineenergycore.cube_charge": "エネルギーキューブが充電中"
 }

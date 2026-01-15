@@ -1,9 +1,0 @@
-{
-  "parent": "valineenergycore:block/cable",
-  "textures": {
-    "side": "valineenergycore:block/cable/basic_cable_vertical",
-    "center_down": "valineenergycore:block/cable/basic_cable",
-    "side_opaque": "valineenergycore:block/cable/opaque/basic_cable_vertical",
-    "center_opaque": "valineenergycore:block/cable/basic_cable"
-  }
-}

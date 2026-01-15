@@ -10,7 +10,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
 /**
- * ValineEnergy Core のクリエイティブタブ登録
+ * ValineEnergy Core のクリエイティブタブ登録（無限容量システム対応版）
  */
 public class VECreativeTabs {
 
@@ -21,13 +21,17 @@ public class VECreativeTabs {
             "valineenergycore",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.valineenergycore"))
-                    .icon(() -> new ItemStack(VERegistration.VE_CABLE_BASIC.get()))
+                    .icon(() -> new ItemStack(VERegistration.VE_ENERGY_CUBE.get()))
                     .displayItems((parameters, output) -> {
-                        // ケーブルを追加
-                        output.accept(VERegistration.VE_CABLE_BASIC_ITEM.get());
-                        output.accept(VERegistration.VE_CABLE_ADVANCED_ITEM.get());
-                        output.accept(VERegistration.VE_CABLE_ELITE_ITEM.get());
-                        output.accept(VERegistration.VE_CABLE_ULTIMATE_ITEM.get());
+                        // 無限容量ケーブル
+                        output.accept(VERegistration.VE_CABLE_INFINITE_ITEM.get());
+
+                        // エネルギーキューブ
+                        output.accept(VERegistration.VE_ENERGY_CUBE_ITEM.get());
+
+                        // 今後追加するアイテムもここに記述
+                        // output.accept(VERegistration.ENERGY_TABLET.get());
+                        // output.accept(VERegistration.NETWORK_READER.get());
                     })
                     .build()
     );

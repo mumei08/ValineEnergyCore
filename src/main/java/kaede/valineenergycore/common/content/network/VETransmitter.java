@@ -14,11 +14,11 @@ public abstract class VETransmitter implements IVETransmitter {
 
     protected VENetwork network;
     protected final BlockPos position;
-    protected final VECableTier tier;
+    protected final BigEnergy capacity;
 
-    public VETransmitter(BlockPos position, VECableTier tier) {
+    public VETransmitter(BlockPos position, BigEnergy capacity) {
         this.position = position;
-        this.tier = tier;
+        this.capacity = capacity;
     }
 
     @Override
@@ -41,12 +41,7 @@ public abstract class VETransmitter implements IVETransmitter {
 
     @Override
     public BigEnergy getCapacity() {
-        return tier.getCapacity();
-    }
-
-    @Override
-    public VECableTier getTier() {
-        return tier;
+        return capacity;
     }
 
     /**

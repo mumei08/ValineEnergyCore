@@ -134,21 +134,30 @@ Adding Libraries to Inheritance
 Reading Input: C:\Dev\ValineEnergyCore\build\libs\valineenergycore-1.0.0.jar
 Adding input to inheritance map
 Processing entries
-Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockEntityVECable/getUpdateTag()Lnet/minecraft/nbt/CompoundTag; from net/minecraft/world/level/block/entity/BlockEntity/getUpdateTag()Lnet/minecraft/nbt/CompoundTag;: getUpdateTag -> m_5995_
-Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockEntityVECable/load(Lnet/minecraft/nbt/CompoundTag;)V from net/minecraft/world/level/block/entity/BlockEntity/load(Lnet/minecraft/nbt/CompoundTag;)V: load -> m_142466_
-Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockEntityVECable/saveAdditional(Lnet/minecraft/nbt/CompoundTag;)V from net/minecraft/world/level/block/entity/BlockEntity/saveAdditional(Lnet/minecraft/nbt/CompoundTag;)V: saveAdditional -> m_183515_
-Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockEntityVECable/getUpdatePacket()Lnet/minecraft/network/protocol/Packet; from net/minecraft/world/level/block/entity/BlockEntity/getUpdatePacket()Lnet/minecraft/network/protocol/Packet;: getUpdatePacket -> m_58483_
-Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockEntityVECable/clearRemoved()V from net/minecraft/world/level/block/entity/BlockEntity/clearRemoved()V: clearRemoved -> m_6339_
-Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockEntityVECable/setRemoved()V from net/minecraft/world/level/block/entity/BlockEntity/setRemoved()V: setRemoved -> m_7651_
-Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockVECable/onPlace(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Z)V from net/minecraft/world/level/block/state/BlockBehaviour/onPlace(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Z)V: onPlace -> m_6807_
-Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockVECable/onRemove(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Z)V from net/minecraft/world/level/block/state/BlockBehaviour/onRemove(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Z)V: onRemove -> m_6810_
-Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockVECable/getStateForPlacement(Lnet/minecraft/world/item/context/BlockPlaceContext;)Lnet/minecraft/world/level/block/state/BlockState; from net/minecraft/world/level/block/Block/getStateForPlacement(Lnet/minecraft/world/item/context/BlockPlaceContext;)Lnet/minecraft/world/level/block/state/BlockState;: getStateForPlacement -> m_5573_
-Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockVECable/neighborChanged(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/core/BlockPos;Z)V from net/minecraft/world/level/block/state/BlockBehaviour/neighborChanged(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/core/BlockPos;Z)V: neighborChanged -> m_6861_
-Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockVECable/getShape(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/shapes/CollisionContext;)Lnet/minecraft/world/phys/shapes/VoxelShape; from net/minecraft/world/level/block/state/BlockBehaviour/getShape(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/shapes/CollisionContext;)Lnet/minecraft/world/phys/shapes/VoxelShape;: getShape -> m_5940_
-Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockVECable/createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V from net/minecraft/world/level/block/Block/createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V: createBlockStateDefinition -> m_7926_
-Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockVECable/getTicker(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/entity/BlockEntityType;)Lnet/minecraft/world/level/block/entity/BlockEntityTicker; from net/minecraft/world/level/block/EntityBlock/getTicker(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/entity/BlockEntityType;)Lnet/minecraft/world/level/block/entity/BlockEntityTicker;: getTicker -> m_142354_
-Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockVECable/newBlockEntity(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/level/block/entity/BlockEntity; from net/minecraft/world/level/block/EntityBlock/newBlockEntity(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/level/block/entity/BlockEntity;: newBlockEntity -> m_142194_
-Conflicting propagated mapping for kaede/valineenergycore/common/item/VECableBlockItem/appendHoverText(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;)V from net/minecraft/world/item/BlockItem/appendHoverText(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;)V: appendHoverText -> m_7373_
+Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockEntityVEEnergyCube/getUpdateTag()Lnet/minecraft/nbt/CompoundTag; from net/minecraft/world/level/block/entity/BlockEntity/getUpdateTag()Lnet/minecraft/nbt/CompoundTag;: getUpdateTag -> m_5995_
+Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockEntityVECableInfinite/getUpdateTag()Lnet/minecraft/nbt/CompoundTag; from net/minecraft/world/level/block/entity/BlockEntity/getUpdateTag()Lnet/minecraft/nbt/CompoundTag;: getUpdateTag -> m_5995_
+Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockEntityVEEnergyCube/load(Lnet/minecraft/nbt/CompoundTag;)V from net/minecraft/world/level/block/entity/BlockEntity/load(Lnet/minecraft/nbt/CompoundTag;)V: load -> m_142466_
+Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockEntityVECableInfinite/load(Lnet/minecraft/nbt/CompoundTag;)V from net/minecraft/world/level/block/entity/BlockEntity/load(Lnet/minecraft/nbt/CompoundTag;)V: load -> m_142466_
+Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockEntityVECableInfinite/saveAdditional(Lnet/minecraft/nbt/CompoundTag;)V from net/minecraft/world/level/block/entity/BlockEntity/saveAdditional(Lnet/minecraft/nbt/CompoundTag;)V: saveAdditional -> m_183515_
+Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockEntityVEEnergyCube/saveAdditional(Lnet/minecraft/nbt/CompoundTag;)V from net/minecraft/world/level/block/entity/BlockEntity/saveAdditional(Lnet/minecraft/nbt/CompoundTag;)V: saveAdditional -> m_183515_
+Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockEntityVECableInfinite/getUpdatePacket()Lnet/minecraft/network/protocol/Packet; from net/minecraft/world/level/block/entity/BlockEntity/getUpdatePacket()Lnet/minecraft/network/protocol/Packet;: getUpdatePacket -> m_58483_
+Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockEntityVEEnergyCube/getUpdatePacket()Lnet/minecraft/network/protocol/Packet; from net/minecraft/world/level/block/entity/BlockEntity/getUpdatePacket()Lnet/minecraft/network/protocol/Packet;: getUpdatePacket -> m_58483_
+Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockEntityVECableInfinite/setRemoved()V from net/minecraft/world/level/block/entity/BlockEntity/setRemoved()V: setRemoved -> m_7651_
+Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockEntityVEEnergyCube/setRemoved()V from net/minecraft/world/level/block/entity/BlockEntity/setRemoved()V: setRemoved -> m_7651_
+Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockVECableInfinite/onPlace(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Z)V from net/minecraft/world/level/block/state/BlockBehaviour/onPlace(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Z)V: onPlace -> m_6807_
+Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockVECableInfinite/onRemove(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Z)V from net/minecraft/world/level/block/state/BlockBehaviour/onRemove(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Z)V: onRemove -> m_6810_
+Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockVECableInfinite/getStateForPlacement(Lnet/minecraft/world/item/context/BlockPlaceContext;)Lnet/minecraft/world/level/block/state/BlockState; from net/minecraft/world/level/block/Block/getStateForPlacement(Lnet/minecraft/world/item/context/BlockPlaceContext;)Lnet/minecraft/world/level/block/state/BlockState;: getStateForPlacement -> m_5573_
+Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockVECableInfinite/neighborChanged(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/core/BlockPos;Z)V from net/minecraft/world/level/block/state/BlockBehaviour/neighborChanged(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/core/BlockPos;Z)V: neighborChanged -> m_6861_
+Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockVECableInfinite/getShape(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/shapes/CollisionContext;)Lnet/minecraft/world/phys/shapes/VoxelShape; from net/minecraft/world/level/block/state/BlockBehaviour/getShape(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/shapes/CollisionContext;)Lnet/minecraft/world/phys/shapes/VoxelShape;: getShape -> m_5940_
+Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockVECableInfinite/createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V from net/minecraft/world/level/block/Block/createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V: createBlockStateDefinition -> m_7926_
+Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockVECableInfinite/getTicker(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/entity/BlockEntityType;)Lnet/minecraft/world/level/block/entity/BlockEntityTicker; from net/minecraft/world/level/block/EntityBlock/getTicker(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/entity/BlockEntityType;)Lnet/minecraft/world/level/block/entity/BlockEntityTicker;: getTicker -> m_142354_
+Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockVECableInfinite/newBlockEntity(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/level/block/entity/BlockEntity; from net/minecraft/world/level/block/EntityBlock/newBlockEntity(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/level/block/entity/BlockEntity;: newBlockEntity -> m_142194_
+Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockVEEnergyCube/use(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/phys/BlockHitResult;)Lnet/minecraft/world/InteractionResult; from net/minecraft/world/level/block/state/BlockBehaviour/use(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/phys/BlockHitResult;)Lnet/minecraft/world/InteractionResult;: use -> m_6227_
+Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockVEEnergyCube/getTicker(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/entity/BlockEntityType;)Lnet/minecraft/world/level/block/entity/BlockEntityTicker; from net/minecraft/world/level/block/EntityBlock/getTicker(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/entity/BlockEntityType;)Lnet/minecraft/world/level/block/entity/BlockEntityTicker;: getTicker -> m_142354_
+Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockVEEnergyCube/newBlockEntity(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/level/block/entity/BlockEntity; from net/minecraft/world/level/block/EntityBlock/newBlockEntity(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/level/block/entity/BlockEntity;: newBlockEntity -> m_142194_
+Conflicting propagated mapping for kaede/valineenergycore/common/item/VECableInfiniteItem/appendHoverText(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;)V from net/minecraft/world/item/BlockItem/appendHoverText(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;)V: appendHoverText -> m_7373_
+Conflicting propagated mapping for kaede/valineenergycore/common/item/VEEnergyCubeItem/appendHoverText(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;)V from net/minecraft/world/item/BlockItem/appendHoverText(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;)V: appendHoverText -> m_7373_
+Conflicting propagated mapping for net/minecraft/world/entity/LivingEntity/lambda$addAdditionalSaveData$3(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/nbt/Tag;)V from net/minecraft/world/entity/player/Player/lambda$addAdditionalSaveData$3(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/nbt/Tag;)V: lambda$addAdditionalSaveData$3 -> m_219754_
 Adding extras
 Sorting
 Writing Output: C:\Dev\ValineEnergyCore\build\reobfJar\output.jar
@@ -158,41 +167,24 @@ Writing Output: C:\Dev\ValineEnergyCore\build\reobfJar\output.jar
   assets/
   assets/valineenergycore/
   assets/valineenergycore/blockstates/
-  assets/valineenergycore/blockstates/ve_cable_advanced.json
-  assets/valineenergycore/blockstates/ve_cable_basic.json
-  assets/valineenergycore/blockstates/ve_cable_elite.json
-  assets/valineenergycore/blockstates/ve_cable_ultimate.json
+  assets/valineenergycore/blockstates/ve_cable_infinite.json
   assets/valineenergycore/lang/
   assets/valineenergycore/lang/en_us.json
   assets/valineenergycore/lang/ja_jp.json
   assets/valineenergycore/models/
   assets/valineenergycore/models/block/
   assets/valineenergycore/models/block/cable.json
-  assets/valineenergycore/models/block/cable.mtl
-  assets/valineenergycore/models/block/cable.obj.mek
-  assets/valineenergycore/models/block/cable/
-  assets/valineenergycore/models/block/cable/advanced.json
-  assets/valineenergycore/models/block/cable/basic.json
-  assets/valineenergycore/models/block/cable/elite.json
-  assets/valineenergycore/models/block/cable/ultimate.json
+  assets/valineenergycore/models/block/ve_cable_infinite.json
   assets/valineenergycore/models/cable.blend
   assets/valineenergycore/models/cable.obj
   assets/valineenergycore/textures/
   assets/valineenergycore/textures/block/
   assets/valineenergycore/textures/block/cable/
-  assets/valineenergycore/textures/block/cable/advanced_cable.png
-  assets/valineenergycore/textures/block/cable/advanced_cable_vertical.png
-  assets/valineenergycore/textures/block/cable/basic_cable.png
-  assets/valineenergycore/textures/block/cable/basic_cable_vertical.png
-  assets/valineenergycore/textures/block/cable/elite_cable.png
-  assets/valineenergycore/textures/block/cable/elite_cable_vertical.png
   assets/valineenergycore/textures/block/cable/opaque/
-  assets/valineenergycore/textures/block/cable/opaque/advanced_cable_vertical.png
-  assets/valineenergycore/textures/block/cable/opaque/basic_cable_vertical.png
-  assets/valineenergycore/textures/block/cable/opaque/elite_cable_vertical.png
-  assets/valineenergycore/textures/block/cable/opaque/ultimate_cable_vertical.png
-  assets/valineenergycore/textures/block/cable/ultimate_cable.png
-  assets/valineenergycore/textures/block/cable/ultimate_cable_vertical.png
+  assets/valineenergycore/textures/block/cable/opaque/ve_cable_infinite_vertical.png
+  assets/valineenergycore/textures/block/cable/ve_cable_infinite.png
+  assets/valineenergycore/textures/block/cable/ve_cable_infinite_vertical.png
+  assets/valineenergycore/textures/block/ve_energy_cube.png
   kaede/
   kaede/valineenergycore/
   kaede/valineenergycore/ValineEnergyCore.class
@@ -207,13 +199,12 @@ Writing Output: C:\Dev\ValineEnergyCore\build\reobfJar\output.jar
   kaede/valineenergycore/api/energy/VEMemoryManager.class
   kaede/valineenergycore/common/
   kaede/valineenergycore/common/block/
-  kaede/valineenergycore/common/block/BlockEntityVECable.class
-  kaede/valineenergycore/common/block/BlockVECable.class
-  kaede/valineenergycore/common/block/BlockVECableAdvanced.class
-  kaede/valineenergycore/common/block/BlockVECableBasic.class
-  kaede/valineenergycore/common/block/BlockVECableElite.class
-  kaede/valineenergycore/common/block/BlockVECableUltimate.class
-  kaede/valineenergycore/common/block/VECableTransmitter.class
+  kaede/valineenergycore/common/block/BlockEntityVECableInfinite$AdjacentAcceptor.class
+  kaede/valineenergycore/common/block/BlockEntityVECableInfinite$EnergyDemand.class
+  kaede/valineenergycore/common/block/BlockEntityVECableInfinite.class
+  kaede/valineenergycore/common/block/BlockEntityVEEnergyCube.class
+  kaede/valineenergycore/common/block/BlockVECableInfinite.class
+  kaede/valineenergycore/common/block/BlockVEEnergyCube.class
   kaede/valineenergycore/common/capabilities/
   kaede/valineenergycore/common/capabilities/ForgeEnergyToVEWrapper.class
   kaede/valineenergycore/common/capabilities/RestrictedVEContainer.class
@@ -224,6 +215,7 @@ Writing Output: C:\Dev\ValineEnergyCore\build\reobfJar\output.jar
   kaede/valineenergycore/common/capabilities/VEToForgeEnergyWrapper.class
   kaede/valineenergycore/common/capabilities/energy/
   kaede/valineenergycore/common/capabilities/energy/BasicVEContainer.class
+  kaede/valineenergycore/common/capabilities/energy/InfiniteVEContainer.class
   kaede/valineenergycore/common/capabilities/energy/ItemVEContainer.class
   kaede/valineenergycore/common/capabilities/energy/MachineVEContainer.class
   kaede/valineenergycore/common/config/
@@ -233,14 +225,13 @@ Writing Output: C:\Dev\ValineEnergyCore\build\reobfJar\output.jar
   kaede/valineenergycore/common/content/network/
   kaede/valineenergycore/common/content/network/AcceptorData.class
   kaede/valineenergycore/common/content/network/IVETransmitter.class
-  kaede/valineenergycore/common/content/network/VECableTier$1.class
-  kaede/valineenergycore/common/content/network/VECableTier.class
   kaede/valineenergycore/common/content/network/VENetwork.class
   kaede/valineenergycore/common/content/network/VENetworkRegistry.class
   kaede/valineenergycore/common/content/network/VETransmitter.class
   kaede/valineenergycore/common/content/network/VETransmitterHelper.class
   kaede/valineenergycore/common/item/
-  kaede/valineenergycore/common/item/VECableBlockItem.class
+  kaede/valineenergycore/common/item/VECableInfiniteItem.class
+  kaede/valineenergycore/common/item/VEEnergyCubeItem.class
   kaede/valineenergycore/common/registration/
   kaede/valineenergycore/common/registration/VECreativeTabs.class
   kaede/valineenergycore/common/registration/VERegistration.class

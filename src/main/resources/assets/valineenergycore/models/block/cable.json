@@ -1,7 +1,5 @@
 {
   "parent": "block/block",
-  "loader": "mekanism:transmitter",
-  "model": "valineenergycore:models/block/cable.obj.mek",
   "flip_v": true,
   "textures": {
     "particle": "#center_down",

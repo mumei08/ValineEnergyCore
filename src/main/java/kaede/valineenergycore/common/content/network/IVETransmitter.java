@@ -19,6 +19,4 @@ public interface IVETransmitter {
 
     BigEnergy getCapacity();
 
-    VECableTier getTier();
-
 }
