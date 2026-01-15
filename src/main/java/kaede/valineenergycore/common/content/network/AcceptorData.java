@@ -1,7 +1,7 @@
 package kaede.valineenergycore.common.content.network;
 
-import kaede.valineenergycore.api.energy.IVEContainer;
 import net.minecraft.core.BlockPos;
+import net.minecraftforge.energy.IEnergyStorage;
 
 /**
  * Acceptor (エネルギー受容側) のデータ
@@ -9,18 +9,18 @@ import net.minecraft.core.BlockPos;
 
 public class AcceptorData {
     private final BlockPos position;
-    private final IVEContainer container;
+    private final IEnergyStorage storage;
 
-    public AcceptorData(BlockPos position, IVEContainer container) {
+    public AcceptorData(BlockPos position, IEnergyStorage storage) {
         this.position = position;
-        this.container = container;
+        this.storage = storage;
     }
 
     public BlockPos getPosition() {
         return position;
     }
 
-    public IVEContainer getContainer() {
-        return container;
+    public IEnergyStorage getStorage() {
+        return storage;
     }
 }

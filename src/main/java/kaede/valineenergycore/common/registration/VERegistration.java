@@ -3,6 +3,7 @@ package kaede.valineenergycore.common.registration;
 import kaede.valineenergycore.ValineEnergyCore;
 import kaede.valineenergycore.common.block.*;
 import kaede.valineenergycore.common.content.network.VECableTier;
+import kaede.valineenergycore.common.item.VECableBlockItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -78,25 +79,25 @@ public class VERegistration {
 
     // ========== アイテム登録 ==========
 
-    // VE Cable Items
+    // VECableBlockItemを使用するように変更
     public static final RegistryObject<Item> VE_CABLE_BASIC_ITEM = ITEMS.register(
             "ve_cable_basic",
-            () -> new BlockItem(VE_CABLE_BASIC.get(), new Item.Properties())
+            () -> new VECableBlockItem(VE_CABLE_BASIC.get(), new Item.Properties(), VECableTier.BASIC)
     );
 
     public static final RegistryObject<Item> VE_CABLE_ADVANCED_ITEM = ITEMS.register(
             "ve_cable_advanced",
-            () -> new BlockItem(VE_CABLE_ADVANCED.get(), new Item.Properties())
+            () -> new VECableBlockItem(VE_CABLE_ADVANCED.get(), new Item.Properties(), VECableTier.ADVANCED)
     );
 
     public static final RegistryObject<Item> VE_CABLE_ELITE_ITEM = ITEMS.register(
             "ve_cable_elite",
-            () -> new BlockItem(VE_CABLE_ELITE.get(), new Item.Properties())
+            () -> new VECableBlockItem(VE_CABLE_ELITE.get(), new Item.Properties(), VECableTier.ELITE)
     );
 
     public static final RegistryObject<Item> VE_CABLE_ULTIMATE_ITEM = ITEMS.register(
             "ve_cable_ultimate",
-            () -> new BlockItem(VE_CABLE_ULTIMATE.get(), new Item.Properties())
+            () -> new VECableBlockItem(VE_CABLE_ULTIMATE.get(), new Item.Properties(), VECableTier.ULTIMATE)
     );
 
     // ========== BlockEntity登録 ==========

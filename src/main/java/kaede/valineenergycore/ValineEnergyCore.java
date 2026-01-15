@@ -1,8 +1,9 @@
 package kaede.valineenergycore;
 
 import com.mojang.logging.LogUtils;
-import kaede.valineenergycore.common.config.VEConfig;
+import kaede.valineenergycore.common.registration.VECreativeTabs;
 import kaede.valineenergycore.common.registration.VERegistration;
+import kaede.valineenergycore.common.config.VEConfig;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -31,6 +32,7 @@ public class ValineEnergyCore {
 
         // 登録処理
         VERegistration.register(modEventBus);
+        VECreativeTabs.register(modEventBus);
 
         // Config登録
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, VEConfig.COMMON_SPEC);

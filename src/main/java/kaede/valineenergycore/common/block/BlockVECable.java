@@ -17,17 +17,16 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import javax.annotation.Nullable;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * VEケーブルのブロック
- * 6方向への接続を持つ
+ * VEケーブルのブロック - Capability完全対応版
  */
 public class BlockVECable extends Block implements EntityBlock {
 
-    // 各方向への接続プロパティ
     public static final BooleanProperty NORTH = BooleanProperty.create("north");
     public static final BooleanProperty SOUTH = BooleanProperty.create("south");
     public static final BooleanProperty EAST = BooleanProperty.create("east");
@@ -46,16 +45,13 @@ public class BlockVECable extends Block implements EntityBlock {
         PROPERTY_MAP.put(Direction.DOWN, DOWN);
     }
 
-    // ケーブルのTier
     private final VECableTier tier;
 
-    // 中央の芯のサイズ
-    private static final double CENTER_SIZE = 6.0; // 6/16 = 0.375
+    private static final double CENTER_SIZE = 6.0;
     private static final double CENTER_MIN = (16.0 - CENTER_SIZE) / 2.0;
     private static final double CENTER_MAX = CENTER_MIN + CENTER_SIZE;
 
-    // 接続部分のサイズ
-    private static final double CONNECTION_SIZE = 4.0; // 4/16 = 0.25
+    private static final double CONNECTION_SIZE = 4.0;
     private static final double CONNECTION_MIN = (16.0 - CONNECTION_SIZE) / 2.0;
     private static final double CONNECTION_MAX = CONNECTION_MIN + CONNECTION_SIZE;
 
@@ -63,7 +59,6 @@ public class BlockVECable extends Block implements EntityBlock {
         super(properties);
         this.tier = tier;
 
-        // デフォルトステート（全方向接続なし）
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(NORTH, false)
                 .setValue(SOUTH, false)
@@ -86,7 +81,7 @@ public class BlockVECable extends Block implements EntityBlock {
     }
 
     /**
-     * 隣接ブロックに基づいて接続状態を計算
+     * 隣接ブロックに基づいて接続状態を計算 - Capability対応
      */
     private BlockState getConnectionState(BlockGetter level, BlockPos pos) {
         BlockState state = this.defaultBlockState();
@@ -100,7 +95,7 @@ public class BlockVECable extends Block implements EntityBlock {
     }
 
     /**
-     * 指定方向に接続可能かチェック
+     * 指定方向に接続可能かチェック - Capability対応
      */
     private boolean canConnectTo(BlockGetter level, BlockPos pos, Direction direction) {
         BlockPos adjacentPos = pos.relative(direction);
@@ -112,31 +107,40 @@ public class BlockVECable extends Block implements EntityBlock {
             return true;
         }
 
-        // BlockEntityが VE Capability を持っているかチェック
-        BlockEntity be = level.getBlockEntity(adjacentPos);
-        if (be != null) {
-            return hasVECapability(be, direction.getOpposite());
+        // BlockEntityが Forge Energy Capability を持っているかチェック
+        if (level instanceof Level world) {
+            BlockEntity be = world.getBlockEntity(adjacentPos);
+            if (be != null) {
+                return hasEnergyCapability(be, direction.getOpposite());
+            }
         }
 
         return false;
     }
 
     /**
-     * BlockEntityがVE Capabilityを持っているかチェック
+     * BlockEntityがForge Energy Capabilityを持っているかチェック
      */
-    private boolean hasVECapability(BlockEntity be, Direction side) {
-        // TODO: Capability実装後に修正
-        return false;
+    private boolean hasEnergyCapability(BlockEntity be, Direction side) {
+        return be.getCapability(ForgeCapabilities.ENERGY, side).isPresent();
     }
 
     @Override
     public void neighborChanged(BlockState state, Level level, BlockPos pos,
                                 Block block, BlockPos fromPos, boolean isMoving) {
         if (!level.isClientSide) {
-            // 隣接ブロックが変更されたら接続状態を更新
             BlockState newState = getConnectionState(level, pos);
             if (newState != state) {
                 level.setBlock(pos, newState, 3);
+            }
+
+            // ネットワークのAcceptorを更新
+            BlockEntity be = level.getBlockEntity(pos);
+            if (be instanceof BlockEntityVECable cableBE) {
+                VENetwork network = cableBE.getTransmitter().getNetwork();
+                if (network != null) {
+                    network.updateAcceptors();
+                }
             }
         }
     }
@@ -167,23 +171,16 @@ public class BlockVECable extends Block implements EntityBlock {
         super.onRemove(state, level, pos, newState, isMoving);
     }
 
-    // ========== 当たり判定・描画 ==========
-
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos,
                                CollisionContext context) {
         return getVoxelShape(state);
     }
 
-    /**
-     * 接続状態に基づいてVoxelShapeを生成
-     */
     private VoxelShape getVoxelShape(BlockState state) {
-        // 中央の芯
         VoxelShape shape = Block.box(CENTER_MIN, CENTER_MIN, CENTER_MIN,
                 CENTER_MAX, CENTER_MAX, CENTER_MAX);
 
-        // 各方向の接続
         if (state.getValue(NORTH)) {
             shape = Shapes.or(shape, Block.box(CONNECTION_MIN, CONNECTION_MIN, 0,
                     CONNECTION_MAX, CONNECTION_MAX, CENTER_MIN));
@@ -212,8 +209,6 @@ public class BlockVECable extends Block implements EntityBlock {
         return shape;
     }
 
-    // ========== BlockEntity ==========
-
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
@@ -226,7 +221,7 @@ public class BlockVECable extends Block implements EntityBlock {
                                                                   BlockEntityType<T> type) {
         return level.isClientSide ? null : (lvl, pos, st, be) -> {
             if (be instanceof BlockEntityVECable cable) {
-                BlockEntityVECable.tick(level, pos, state, cable);
+                BlockEntityVECable.tick(lvl, pos, st, cable);
             }
         };
     }

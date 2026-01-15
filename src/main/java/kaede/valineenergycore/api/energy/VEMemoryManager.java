@@ -1,28 +1,35 @@
 package kaede.valineenergycore.api.energy;
 
+import kaede.valineenergycore.common.config.VEConfig;
+import com.mojang.logging.LogUtils;
+import org.slf4j.Logger;
 import java.math.BigInteger;
 
 /**
- * ValineEnergy (VE) のメモリベース最大値管理システム
- * 割り当てメモリ 1MB = 10^50 VE の容量
+ * ValineEnergy (VE) のメモリベース最大値管理システム - Config対応版
+ * 設定ファイルから値を動的に取得
  */
 public class VEMemoryManager {
 
-    // 1MBあたりのVE容量: 10^50
-    private static final BigInteger VE_PER_MB = new BigInteger("100000000000000000000000000000000000000000000000000");
+    private static final Logger LOGGER = LogUtils.getLogger();
 
     // キャッシュされた最大VE値
     private static BigEnergy cachedMaxVE = null;
     private static long cachedMaxMemoryMB = 0;
-
-    // 最小保証容量（メモリが少なくても最低限保証）
-    private static final BigEnergy MINIMUM_GUARANTEED = BigEnergy.create(new BigInteger("1000000000000")); // 10^12
+    private static long lastWarningTime = 0;
+    private static final long WARNING_COOLDOWN_MS = 60000; // 1分
 
     /**
      * 現在利用可能な最大VE容量を取得
-     * @return 現在の最大VE容量
+     * 設定でメモリベース制限が無効の場合は無制限
      */
     public static BigEnergy getMaxVECapacity() {
+        // メモリベース制限が無効の場合は事実上無制限
+        if (!VEConfig.COMMON.enableMemoryBasedLimits.get()) {
+            // 極めて大きな値を返す（実質無制限）
+            return BigEnergy.create(new BigInteger("9".repeat(100))); // 10^100に近い値
+        }
+
         long currentMaxMemoryMB = getMaxMemoryMB();
 
         // キャッシュが有効ならそれを返す
@@ -39,35 +46,36 @@ public class VEMemoryManager {
 
     /**
      * 割り当てメモリ（MB単位）を取得
-     * @return 最大メモリ容量（MB）
      */
     private static long getMaxMemoryMB() {
         Runtime runtime = Runtime.getRuntime();
         long maxMemoryBytes = runtime.maxMemory();
-        return maxMemoryBytes / (1024 * 1024); // バイトをMBに変換
+        return maxMemoryBytes / (1024 * 1024);
     }
 
     /**
      * メモリ量から最大VE容量を計算
-     * @param memoryMB メモリ容量（MB）
-     * @return 最大VE容量
+     * Configから設定値を取得
      */
     private static BigEnergy calculateMaxVE(long memoryMB) {
         if (memoryMB <= 0) {
-            return MINIMUM_GUARANTEED;
+            return VEConfig.COMMON.getMinimumGuaranteedCapacity();
         }
 
-        // メモリMB × 10^50
-        BigInteger result = VE_PER_MB.multiply(BigInteger.valueOf(memoryMB));
+        // Configから VE per MB を取得
+        BigInteger vePerMB = VEConfig.COMMON.getVEPerMB();
+
+        // メモリMB × VE per MB
+        BigInteger result = vePerMB.multiply(BigInteger.valueOf(memoryMB));
         BigEnergy calculated = BigEnergy.create(result);
 
         // 最小保証値を下回らないようにする
-        return calculated.max(MINIMUM_GUARANTEED);
+        BigEnergy minimum = VEConfig.COMMON.getMinimumGuaranteedCapacity();
+        return calculated.max(minimum);
     }
 
     /**
      * 現在のメモリ使用状況を取得
-     * @return メモリ使用情報
      */
     public static MemoryInfo getMemoryInfo() {
         Runtime runtime = Runtime.getRuntime();
@@ -81,20 +89,57 @@ public class VEMemoryManager {
 
     /**
      * 指定されたVE量が現在の最大容量を超えていないか検証
-     * @param energy 検証するVE量
-     * @return 超えていなければtrue
      */
     public static boolean isWithinLimit(BigEnergy energy) {
+        if (!VEConfig.COMMON.enableMemoryBasedLimits.get()) {
+            return true; // 制限が無効なら常にtrue
+        }
         return energy.smallerOrEqual(getMaxVECapacity());
     }
 
     /**
      * VE量を現在の最大容量でクランプ
-     * @param energy クランプするVE量
-     * @return クランプされたVE量
      */
     public static BigEnergy clampToLimit(BigEnergy energy) {
+        if (!VEConfig.COMMON.enableMemoryBasedLimits.get()) {
+            return energy; // 制限が無効ならそのまま返す
+        }
         return energy.min(getMaxVECapacity());
+    }
+
+    /**
+     * メモリ使用率が閾値を超えているか確認し、必要なら警告
+     */
+    public static void checkMemoryUsage() {
+        if (!VEConfig.COMMON.showMemoryWarnings.get()) {
+            return;
+        }
+
+        MemoryInfo info = getMemoryInfo();
+        double usageRatio = info.getUsagePercentage() / 100.0;
+        double threshold = VEConfig.COMMON.memoryUsageWarningThreshold.get();
+
+        if (usageRatio > threshold) {
+            long currentTime = System.currentTimeMillis();
+            if (currentTime - lastWarningTime > WARNING_COOLDOWN_MS) {
+                LOGGER.warn(
+                        "VE Memory Warning: Memory usage is at {:.1f}% (threshold: {:.1f}%). " +
+                                "Consider allocating more RAM or reducing VE container usage.",
+                        usageRatio * 100,
+                        threshold * 100
+                );
+                lastWarningTime = currentTime;
+            }
+        }
+    }
+
+    /**
+     * キャッシュをクリア（Config変更時に呼ぶ）
+     */
+    public static void clearCache() {
+        cachedMaxVE = null;
+        cachedMaxMemoryMB = 0;
+        LOGGER.info("VE Memory Manager cache cleared");
     }
 
     /**
@@ -141,11 +186,12 @@ public class VEMemoryManager {
         @Override
         public String toString() {
             return String.format(
-                    "Memory: %d/%d MB (%.1f%%) | Max VE Capacity: %s",
+                    "Memory: %d/%d MB (%.1f%%) | Max VE Capacity: %s | Memory-based limits: %s",
                     getUsedMemoryMB(),
                     getMaxMemoryMB(),
                     getUsagePercentage(),
-                    getMaxVECapacity()
+                    getMaxVECapacity(),
+                    VEConfig.COMMON.enableMemoryBasedLimits.get() ? "Enabled" : "Disabled"
             );
         }
     }

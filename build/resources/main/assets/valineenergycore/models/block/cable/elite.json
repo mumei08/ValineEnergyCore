@@ -1,0 +1,9 @@
+{
+  "parent": "valineenergycore:block/cable",
+  "textures": {
+    "side": "valineenergycore:block/cable/elite_cable_vertical",
+    "center_down": "valineenergycore:block/cable/elite_cable",
+    "side_opaque": "valineenergycore:block/cable/opaque/elite_cable_vertical",
+    "center_opaque": "valineenergycore:block/cable/elite_cable"
+  }
+}

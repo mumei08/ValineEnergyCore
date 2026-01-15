@@ -88,6 +88,7 @@ public class VENetworkRegistry {
      * 隣接するネットワークを探してマージするか、新規ネットワークを作成
      */
     public static void mergeOrCreateNetwork(VETransmitter transmitter) {
+        if (transmitter.getNetwork() != null) return;
         BlockPos pos = transmitter.getPosition();
         Set<VENetwork> adjacentNetworks = new HashSet<>();
 

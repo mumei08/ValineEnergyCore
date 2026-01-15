@@ -1,0 +1,112 @@
+{
+  "_comment": "ValineEnergy Core - English (US) Language File",
+
+  "itemGroup.valineenergycore": "ValineEnergy Core",
+
+  "block.valineenergycore.ve_cable_basic": "Basic VE Cable",
+  "block.valineenergycore.ve_cable_advanced": "Advanced VE Cable",
+  "block.valineenergycore.ve_cable_elite": "Elite VE Cable",
+  "block.valineenergycore.ve_cable_ultimate": "Ultimate VE Cable",
+
+  "tooltip.valineenergycore.ve_cable": "Transfers ValineEnergy (VE)",
+  "tooltip.valineenergycore.ve_cable.capacity": "Capacity: %s VE",
+  "tooltip.valineenergycore.ve_cable.transfer_rate": "Transfer Rate: %s VE/tick",
+  "tooltip.valineenergycore.ve_cable.tier": "Tier: %s",
+  "tooltip.valineenergycore.shift_for_details": "Hold §eSHIFT§7 for details",
+
+  "tooltip.valineenergycore.energy.stored": "Stored: %s VE",
+  "tooltip.valineenergycore.energy.capacity": "Capacity: %s VE",
+  "tooltip.valineenergycore.energy.percentage": "(%s%%)",
+
+  "info.valineenergycore.tier.basic": "Basic",
+  "info.valineenergycore.tier.advanced": "Advanced",
+  "info.valineenergycore.tier.elite": "Elite",
+  "info.valineenergycore.tier.ultimate": "Ultimate",
+
+  "info.valineenergycore.network.transmitters": "Transmitters: %s",
+  "info.valineenergycore.network.acceptors": "Acceptors: %s",
+  "info.valineenergycore.network.buffer": "Network Buffer: %s VE",
+  "info.valineenergycore.network.capacity": "Network Capacity: %s VE",
+  "info.valineenergycore.network.id": "Network ID: %s",
+
+  "message.valineenergycore.network.created": "VE Network created",
+  "message.valineenergycore.network.merged": "VE Networks merged",
+  "message.valineenergycore.network.split": "VE Network split",
+
+  "message.valineenergycore.memory.warning": "§cWarning: VE memory usage is at %s%%. Consider allocating more RAM.",
+  "message.valineenergycore.memory.limit_reached": "§cVE capacity limit reached! Maximum: %s VE",
+
+  "command.valineenergycore.network.info": "VE Network Information:",
+  "command.valineenergycore.network.total": "Total Networks: %s",
+  "command.valineenergycore.network.total_transmitters": "Total Transmitters: %s",
+  "command.valineenergycore.network.total_acceptors": "Total Acceptors: %s",
+  "command.valineenergycore.network.total_buffer": "Total Buffer: %s VE",
+  "command.valineenergycore.network.total_capacity": "Total Capacity: %s VE",
+
+  "command.valineenergycore.memory.info": "VE Memory Information:",
+  "command.valineenergycore.memory.allocated": "Allocated Memory: %s MB",
+  "command.valineenergycore.memory.used": "Used Memory: %s MB (%s%%)",
+  "command.valineenergycore.memory.max_capacity": "Max VE Capacity: %s VE",
+  "command.valineenergycore.memory.limits_enabled": "Memory-based limits: %s",
+
+  "config.valineenergycore.title": "ValineEnergy Core Configuration",
+
+  "config.valineenergycore.conversion": "Energy Conversion",
+  "config.valineenergycore.conversion.tooltip": "Configure conversion rates between VE and Forge Energy",
+
+  "config.valineenergycore.memory": "Memory-Based System",
+  "config.valineenergycore.memory.tooltip": "Configure how VE capacity scales with allocated memory",
+
+  "config.valineenergycore.cables": "Cable Tiers",
+  "config.valineenergycore.cables.tooltip": "Configure capacity and transfer rates for each cable tier",
+
+  "config.valineenergycore.network": "Network Settings",
+  "config.valineenergycore.network.tooltip": "Configure network behavior and limits",
+
+  "config.valineenergycore.performance": "Performance",
+  "config.valineenergycore.performance.tooltip": "Configure performance optimizations",
+
+  "config.valineenergycore.debug": "Debug Settings",
+  "config.valineenergycore.debug.tooltip": "Configure debug and visualization options",
+
+  "jei.valineenergycore.category.ve_conversion": "VE Conversion",
+  "jei.valineenergycore.info.ve_to_fe": "1 VE = %s FE",
+  "jei.valineenergycore.info.fe_to_ve": "1 FE = %s VE",
+
+  "death.attack.valineenergycore.overload": "%s was overwhelmed by excessive ValineEnergy",
+
+  "gui.valineenergycore.energy": "Energy",
+  "gui.valineenergycore.stored": "Stored",
+  "gui.valineenergycore.capacity": "Capacity",
+  "gui.valineenergycore.transfer": "Transfer",
+  "gui.valineenergycore.input": "Input",
+  "gui.valineenergycore.output": "Output",
+
+  "advancement.valineenergycore.root.title": "ValineEnergy",
+  "advancement.valineenergycore.root.description": "A memory-based energy system",
+
+  "advancement.valineenergycore.basic_cable.title": "Energy Highways",
+  "advancement.valineenergycore.basic_cable.description": "Craft a Basic VE Cable",
+
+  "advancement.valineenergycore.advanced_cable.title": "Power Surge",
+  "advancement.valineenergycore.advanced_cable.description": "Upgrade to an Advanced VE Cable",
+
+  "advancement.valineenergycore.elite_cable.title": "Elite Energy",
+  "advancement.valineenergycore.elite_cable.description": "Craft an Elite VE Cable",
+
+  "advancement.valineenergycore.ultimate_cable.title": "Ultimate Power",
+  "advancement.valineenergycore.ultimate_cable.description": "Achieve the ultimate: Ultimate VE Cable",
+
+  "advancement.valineenergycore.huge_network.title": "Mega Network",
+  "advancement.valineenergycore.huge_network.description": "Create a network with 100+ transmitters",
+
+  "advancement.valineenergycore.max_capacity.title": "Limitless Power",
+  "advancement.valineenergycore.max_capacity.description": "Reach maximum VE capacity based on your RAM",
+
+  "key.categories.valineenergycore": "ValineEnergy Core",
+  "key.valineenergycore.toggle_network_overlay": "Toggle Network Overlay",
+
+  "subtitles.valineenergycore.cable_connect": "VE Cable connects",
+  "subtitles.valineenergycore.cable_disconnect": "VE Cable disconnects",
+  "subtitles.valineenergycore.energy_transfer": "Energy flows"
+}

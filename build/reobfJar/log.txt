@@ -148,12 +148,51 @@ Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockVECa
 Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockVECable/createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V from net/minecraft/world/level/block/Block/createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V: createBlockStateDefinition -> m_7926_
 Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockVECable/getTicker(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/entity/BlockEntityType;)Lnet/minecraft/world/level/block/entity/BlockEntityTicker; from net/minecraft/world/level/block/EntityBlock/getTicker(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/entity/BlockEntityType;)Lnet/minecraft/world/level/block/entity/BlockEntityTicker;: getTicker -> m_142354_
 Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockVECable/newBlockEntity(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/level/block/entity/BlockEntity; from net/minecraft/world/level/block/EntityBlock/newBlockEntity(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/level/block/entity/BlockEntity;: newBlockEntity -> m_142194_
+Conflicting propagated mapping for kaede/valineenergycore/common/item/VECableBlockItem/appendHoverText(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;)V from net/minecraft/world/item/BlockItem/appendHoverText(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;)V: appendHoverText -> m_7373_
 Adding extras
 Sorting
 Writing Output: C:\Dev\ValineEnergyCore\build\reobfJar\output.jar
   META-INF/
   META-INF/MANIFEST.MF
   META-INF/mods.toml
+  assets/
+  assets/valineenergycore/
+  assets/valineenergycore/blockstates/
+  assets/valineenergycore/blockstates/ve_cable_advanced.json
+  assets/valineenergycore/blockstates/ve_cable_basic.json
+  assets/valineenergycore/blockstates/ve_cable_elite.json
+  assets/valineenergycore/blockstates/ve_cable_ultimate.json
+  assets/valineenergycore/lang/
+  assets/valineenergycore/lang/en_us.json
+  assets/valineenergycore/lang/ja_jp.json
+  assets/valineenergycore/models/
+  assets/valineenergycore/models/block/
+  assets/valineenergycore/models/block/cable.json
+  assets/valineenergycore/models/block/cable.mtl
+  assets/valineenergycore/models/block/cable.obj.mek
+  assets/valineenergycore/models/block/cable/
+  assets/valineenergycore/models/block/cable/advanced.json
+  assets/valineenergycore/models/block/cable/basic.json
+  assets/valineenergycore/models/block/cable/elite.json
+  assets/valineenergycore/models/block/cable/ultimate.json
+  assets/valineenergycore/models/cable.blend
+  assets/valineenergycore/models/cable.obj
+  assets/valineenergycore/textures/
+  assets/valineenergycore/textures/block/
+  assets/valineenergycore/textures/block/cable/
+  assets/valineenergycore/textures/block/cable/advanced_cable.png
+  assets/valineenergycore/textures/block/cable/advanced_cable_vertical.png
+  assets/valineenergycore/textures/block/cable/basic_cable.png
+  assets/valineenergycore/textures/block/cable/basic_cable_vertical.png
+  assets/valineenergycore/textures/block/cable/elite_cable.png
+  assets/valineenergycore/textures/block/cable/elite_cable_vertical.png
+  assets/valineenergycore/textures/block/cable/opaque/
+  assets/valineenergycore/textures/block/cable/opaque/advanced_cable_vertical.png
+  assets/valineenergycore/textures/block/cable/opaque/basic_cable_vertical.png
+  assets/valineenergycore/textures/block/cable/opaque/elite_cable_vertical.png
+  assets/valineenergycore/textures/block/cable/opaque/ultimate_cable_vertical.png
+  assets/valineenergycore/textures/block/cable/ultimate_cable.png
+  assets/valineenergycore/textures/block/cable/ultimate_cable_vertical.png
   kaede/
   kaede/valineenergycore/
   kaede/valineenergycore/ValineEnergyCore.class
@@ -177,9 +216,11 @@ Writing Output: C:\Dev\ValineEnergyCore\build\reobfJar\output.jar
   kaede/valineenergycore/common/block/VECableTransmitter.class
   kaede/valineenergycore/common/capabilities/
   kaede/valineenergycore/common/capabilities/ForgeEnergyToVEWrapper.class
-  kaede/valineenergycore/common/capabilities/VECapabilities$1.class
+  kaede/valineenergycore/common/capabilities/RestrictedVEContainer.class
+  kaede/valineenergycore/common/capabilities/SidedVECapabilityProvider.class
   kaede/valineenergycore/common/capabilities/VECapabilities.class
   kaede/valineenergycore/common/capabilities/VECapabilityHelper.class
+  kaede/valineenergycore/common/capabilities/VECapabilityProvider.class
   kaede/valineenergycore/common/capabilities/VEToForgeEnergyWrapper.class
   kaede/valineenergycore/common/capabilities/energy/
   kaede/valineenergycore/common/capabilities/energy/BasicVEContainer.class
@@ -198,6 +239,9 @@ Writing Output: C:\Dev\ValineEnergyCore\build\reobfJar\output.jar
   kaede/valineenergycore/common/content/network/VENetworkRegistry.class
   kaede/valineenergycore/common/content/network/VETransmitter.class
   kaede/valineenergycore/common/content/network/VETransmitterHelper.class
+  kaede/valineenergycore/common/item/
+  kaede/valineenergycore/common/item/VECableBlockItem.class
   kaede/valineenergycore/common/registration/
+  kaede/valineenergycore/common/registration/VECreativeTabs.class
   kaede/valineenergycore/common/registration/VERegistration.class
   pack.mcmeta
