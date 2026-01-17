@@ -134,11 +134,11 @@ Adding Libraries to Inheritance
 Reading Input: C:\Dev\ValineEnergyCore\build\libs\valineenergycore-1.0.0.jar
 Adding input to inheritance map
 Processing entries
-Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockEntityVEEnergyCube/getUpdateTag()Lnet/minecraft/nbt/CompoundTag; from net/minecraft/world/level/block/entity/BlockEntity/getUpdateTag()Lnet/minecraft/nbt/CompoundTag;: getUpdateTag -> m_5995_
 Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockEntityVECableInfinite/getUpdateTag()Lnet/minecraft/nbt/CompoundTag; from net/minecraft/world/level/block/entity/BlockEntity/getUpdateTag()Lnet/minecraft/nbt/CompoundTag;: getUpdateTag -> m_5995_
-Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockEntityVEEnergyCube/load(Lnet/minecraft/nbt/CompoundTag;)V from net/minecraft/world/level/block/entity/BlockEntity/load(Lnet/minecraft/nbt/CompoundTag;)V: load -> m_142466_
 Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockEntityVECableInfinite/load(Lnet/minecraft/nbt/CompoundTag;)V from net/minecraft/world/level/block/entity/BlockEntity/load(Lnet/minecraft/nbt/CompoundTag;)V: load -> m_142466_
 Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockEntityVECableInfinite/saveAdditional(Lnet/minecraft/nbt/CompoundTag;)V from net/minecraft/world/level/block/entity/BlockEntity/saveAdditional(Lnet/minecraft/nbt/CompoundTag;)V: saveAdditional -> m_183515_
+Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockEntityVEEnergyCube/getUpdateTag()Lnet/minecraft/nbt/CompoundTag; from net/minecraft/world/level/block/entity/BlockEntity/getUpdateTag()Lnet/minecraft/nbt/CompoundTag;: getUpdateTag -> m_5995_
+Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockEntityVEEnergyCube/load(Lnet/minecraft/nbt/CompoundTag;)V from net/minecraft/world/level/block/entity/BlockEntity/load(Lnet/minecraft/nbt/CompoundTag;)V: load -> m_142466_
 Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockEntityVEEnergyCube/saveAdditional(Lnet/minecraft/nbt/CompoundTag;)V from net/minecraft/world/level/block/entity/BlockEntity/saveAdditional(Lnet/minecraft/nbt/CompoundTag;)V: saveAdditional -> m_183515_
 Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockEntityVECableInfinite/getUpdatePacket()Lnet/minecraft/network/protocol/Packet; from net/minecraft/world/level/block/entity/BlockEntity/getUpdatePacket()Lnet/minecraft/network/protocol/Packet;: getUpdatePacket -> m_58483_
 Conflicting propagated mapping for kaede/valineenergycore/common/block/BlockEntityVEEnergyCube/getUpdatePacket()Lnet/minecraft/network/protocol/Packet; from net/minecraft/world/level/block/entity/BlockEntity/getUpdatePacket()Lnet/minecraft/network/protocol/Packet;: getUpdatePacket -> m_58483_
@@ -168,20 +168,29 @@ Writing Output: C:\Dev\ValineEnergyCore\build\reobfJar\output.jar
   assets/valineenergycore/
   assets/valineenergycore/blockstates/
   assets/valineenergycore/blockstates/ve_cable_infinite.json
+  assets/valineenergycore/blockstates/ve_energy_cube.json
   assets/valineenergycore/lang/
   assets/valineenergycore/lang/en_us.json
   assets/valineenergycore/lang/ja_jp.json
   assets/valineenergycore/models/
   assets/valineenergycore/models/block/
-  assets/valineenergycore/models/block/cable.json
-  assets/valineenergycore/models/block/ve_cable_infinite.json
-  assets/valineenergycore/models/cable.blend
+  assets/valineenergycore/models/block/cable/
+  assets/valineenergycore/models/block/cable/ve_cable_core.json
+  assets/valineenergycore/models/block/cable/ve_cable_down.json
+  assets/valineenergycore/models/block/cable/ve_cable_east.json
+  assets/valineenergycore/models/block/cable/ve_cable_north.json
+  assets/valineenergycore/models/block/cable/ve_cable_side.json
+  assets/valineenergycore/models/block/cable/ve_cable_south.json
+  assets/valineenergycore/models/block/cable/ve_cable_up.json
+  assets/valineenergycore/models/block/cable/ve_cable_west.json
+  assets/valineenergycore/models/block/ve_energy_cube.json
   assets/valineenergycore/models/cable.obj
+  assets/valineenergycore/models/item/
+  assets/valineenergycore/models/item/ve_cable_infinite.json
+  assets/valineenergycore/models/item/ve_energy_cube.json
   assets/valineenergycore/textures/
   assets/valineenergycore/textures/block/
   assets/valineenergycore/textures/block/cable/
-  assets/valineenergycore/textures/block/cable/opaque/
-  assets/valineenergycore/textures/block/cable/opaque/ve_cable_infinite_vertical.png
   assets/valineenergycore/textures/block/cable/ve_cable_infinite.png
   assets/valineenergycore/textures/block/cable/ve_cable_infinite_vertical.png
   assets/valineenergycore/textures/block/ve_energy_cube.png

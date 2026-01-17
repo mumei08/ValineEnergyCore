@@ -1,0 +1,19 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "texture": "valineenergycore:block/cable/ve_cable_infinite_vertical"
+  },
+  "elements": [
+    {
+      "from": [10, 6, 6],
+      "to": [16, 10, 10],
+      "faces": {
+        "down":  { "uv": [10, 6, 16, 10], "texture": "#texture", "rotation": 270 },
+        "up":    { "uv": [0, 6, 6, 10], "texture": "#texture", "rotation": 90 },
+        "north": { "uv": [0, 6, 6, 10], "texture": "#texture" },
+        "south": { "uv": [10, 6, 16, 10], "texture": "#texture" },
+        "east":  { "uv": [6, 6, 10, 10], "texture": "#texture" }
+      }
+    }
+  ]
+}
